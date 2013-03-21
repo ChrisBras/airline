@@ -4,8 +4,8 @@ class CreateFlights < ActiveRecord::Migration
       t.references :aircraft
       t.references :origin
       t.references :destination
-      t.time :departure
-      t.time :arrival
+      t.timestamp :departure
+      t.timestamp :arrival
 
       t.timestamps
     end
