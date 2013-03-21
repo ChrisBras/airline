@@ -18,7 +18,7 @@
         <td><%= link_to cargo.id, cargo_path(cargo) %></td>
         <td><%= cargo.weight %></td>
         <td><%= cargo.contents %></td>
-        <td><%= cargo.flight_id %></td>
+        <td><%= link_to cargo.flight_id, cargo.flight %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_cargo_path(cargo), :class => 'btn btn-mini' %>

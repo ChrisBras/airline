@@ -9,9 +9,11 @@ gem 'simple_form'
 
 group :development do
   gem 'sqlite3'
+  gem 'therubyracer'
 end
 
 group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
   gem 'pg'
 end
 
@@ -22,7 +24,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
