@@ -1,0 +1,38 @@
+<%- model_class = AirCrew -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:pilot) %></th>
+      <th><%= model_class.human_attribute_name(:navigator) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @air_crews.each do |air_crew| %>
+      <tr>
+        <td><%= link_to air_crew.id, air_crew_path(air_crew) %></td>
+        <td><%= air_crew.pilot %></td>
+        <td><%= air_crew.navigator %></td>
+        <td><%=l air_crew.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_air_crew_path(air_crew), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      air_crew_path(air_crew),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_air_crew_path,
+            :class => 'btn btn-primary' %>

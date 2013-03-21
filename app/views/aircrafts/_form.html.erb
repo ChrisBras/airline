@@ -1,0 +1,28 @@
+<%= simple_form_for @aircraft, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.input :tail_number, :class => 'control-label' %>
+    <div class="controls">
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.input :aircraft_type, :class => 'control-label' %>
+    <div class="controls">
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.association :air_crew, label_method: lambda { |air_crew| "#{air_crew.pilot} | #{air_crew.navigator}"}, value_method: :id, :class => 'control-label' %>
+    <div class="controls">
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.input :fuel, :class => 'control-label' %>
+    <div class="controls">
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                aircrafts_path, :class => 'btn' %>
+  </div>
+<% end %>
