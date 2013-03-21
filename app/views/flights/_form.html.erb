@@ -4,7 +4,7 @@
   <%= f.association :destination %>
   <%= f.input :departure %>
   <%= f.input :arrival %>
-  <%= f.association :cargos, label_method: :contents %>
+  <%= f.association :cargos, label_method: lambda {|cargo| "#{cargo.id} | #{cargo.contents}"} %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
