@@ -27,7 +27,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
   gem 'uglifier', '>= 1.0.3'
-  # gem 'twitter-bootstrap-rails'
+    # gem 'twitter-bootstrap-rails'
   gem 'bootstrap-sass'
   gem 'libv8', '3.11.8.0'
   # gem 'less-rails'
