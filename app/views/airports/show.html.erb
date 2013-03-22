@@ -1,30 +1,10 @@
-<%- model_class = Airport -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1><%=t '.title', :default => "Aiport: #{@airport.title}" %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @airport.title %></dd>
+<%= render partial: 'flightstable', locals: {flights: @airport.arrivals, title: 'Arrivals'}  %>
 
-  <% if !@airport.departures.empty?  %>
-  <dt><strong>Departures</strong></dt>
-
-  <% @airport.departures.each do |departure| %>
-
-  <dd><%= link_to departure.id, flight_path(departure.id.to_i) %></dd>
-  <% end %>
-  <% end %>
-
-  <% if !@airport.arrivals.empty? %>
-  <dt><strong>Arrivals</strong></dt>
-
-  <% @airport.arrivals.each do |arrival| %>
-
-  <dd><%= link_to arrival.id, flight_path(arrival.id.to_i) %></dd>
-  <% end %>
-  <% end %>
-</dl>
+<%= render partial: 'flightstable', locals: {flights: @airport.departures, title: 'Departures'}  %>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
