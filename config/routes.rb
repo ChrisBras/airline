@@ -1,4 +1,7 @@
 Airline::Application.routes.draw do
+  resources :cargo_items
+
+
   resources :flights
 
 

@@ -1,0 +1,9 @@
+<%= simple_form_for @cargo_item, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :order_id %>
+  <%= f.input :cargo_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                cargo_items_path, :class => 'btn' %>
+  </div>
+<% end %>
