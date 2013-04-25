@@ -1,0 +1,17 @@
+<tr>
+<td><%= link_to flight.id, flight_path(flight) %></td>
+<td><%= flight.aircraft.aircraft_type %></td>
+<td><%= flight.origin.title %></td>
+<td><%= flight.destination.title %></td>
+<td><%= flight.departure %></td>
+<td><%= flight.arrival %></td>
+<td>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+            edit_flight_path(flight), :class => 'btn btn-mini' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+            flight_path(flight),
+            :method => :delete,
+            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+            :class => 'btn btn-mini btn-danger' %>
+</td>
+</tr>

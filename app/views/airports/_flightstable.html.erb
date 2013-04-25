@@ -1,0 +1,21 @@
+ <%- model_class = Airport -%>
+
+ <div> 
+  <h2><%= title %></h2>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:aircraft_type) %></th>
+      <th><%= model_class.human_attribute_name(:origin) %></th>
+      <th><%= model_class.human_attribute_name(:destination) %></th>
+      <th><%= model_class.human_attribute_name(:departure) %></th>
+      <th><%= model_class.human_attribute_name(:arrivals) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render(flights) || "<tr><td colspan='6'>No #{title} available.<td></tr>".html_safe %>
+</tbody>
+</table
+
+<div>
