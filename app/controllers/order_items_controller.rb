@@ -21,7 +21,7 @@ class OrderItemsController < ApplicationController
   def index
 
     respond_to do |format|
-      format.json { render json: ::CargoItems.all }
+      format.json { render json: ::CargoItem.all }
     end
   end
 end

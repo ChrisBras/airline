@@ -3,4 +3,5 @@ class CargoItem < ActiveRecord::Base
   attr_accessible :order_id, :cargo_id
 
   validates :order_id, :cargo_id, presence: :true
+  validates :order_id, uniqueness: true
 end
