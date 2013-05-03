@@ -15,8 +15,7 @@ Airline::Application.routes.draw do
 
 
   resources :air_crews
-
-
+  resources :order_items
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
